@@ -8,7 +8,7 @@ public interface CustomerService {
 	//获取所有的用户
     List<Customer> getAllCus();
         
-    public Customer findCus2(String username, String password);
+    public Customer findCus(String username, String password);
     
     //增
     int addCus(Customer customer);

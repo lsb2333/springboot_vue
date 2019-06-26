@@ -28,4 +28,5 @@ public interface ErrorCode {
     int REQUESTSUCCESS = 0;
     int SELECTCUS = 10009;
     int ADDCUS = 12000;
+    int SUCCESS = 200;
 }

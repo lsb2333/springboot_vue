@@ -19,7 +19,7 @@ public class ResultModelTool {
                     handledModel.setData(map);
                     break;
                 case 10001:
-                    handledModel.setMsg("无此用户");
+                    handledModel.setMsg("登录失败");
                     handledModel.setData(map);
                     break;
                 case 10002:
@@ -60,20 +60,29 @@ public class ResultModelTool {
                 case 12000:
                 	handledModel.setMsg("注册成功");
                 	handledModel.setData(map);
+                	break;
                 case 11111:
                 	handledModel.setMsg("注册失败");
                 	handledModel.setData(map);
+                	break;
                 case 11112:
                 	handledModel.setMsg("注册失败");
                 	handledModel.setData(map);
+                	break;
                 case 12221:
                 	handledModel.setMsg("登录失败");
                 	handledModel.setData(map);
+                	break;
                 case 12222:
                 	handledModel.setMsg("登录失败");
                 	handledModel.setData(map);
-                default:
+                	break;
+                case 200:
                     handledModel.setMsg("success");
+                    handledModel.setData(resultModel.getData());
+                    break;
+                default:
+                	handledModel.setMsg("error");
                     handledModel.setData(resultModel.getData());
                     break;
             }

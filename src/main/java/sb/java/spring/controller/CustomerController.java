@@ -24,7 +24,7 @@ public class CustomerController {
 	@Autowired
 	private CustomerService customerService;
 	
-	@RequestMapping(value = "/list", method = RequestMethod.POST)
+	@RequestMapping(value = "/list", method = RequestMethod.GET)
 	public ResultModel listCus() {
 		List<Customer> cusList = customerService.getAllCus();
         Map<String,List<Customer>> UserMap = new HashMap<>();
@@ -32,7 +32,7 @@ public class CustomerController {
             UserMap.put("users",cusList);
         }
         ResultModel resultModel = new ResultModel();
-        resultModel.setCode(1);
+        resultModel.setCode(200);
         resultModel.setData(UserMap);
         return ResultModelTool.handleResultModel(resultModel);
 		
@@ -41,22 +41,23 @@ public class CustomerController {
 	
 	@RequestMapping(value = "/regcus", method = RequestMethod.POST)
     public ResultModel addUser(@RequestBody Customer customer){
-		int errorCode = 1;
+		System.out.println(customer);
+		int errorcode = 200;
 		List<Customer> list = customerService.getAllCus();
 		for(int i=0;i<list.size();i++) {
 			if(list.get(i).getUsername().equals(customer.getUsername())) {
-				errorCode = 11111;
+				errorcode = 11111;
 			}
 		}
 		if(customer.getUsername()=="" || customer.getPassword()=="") {
-			errorCode = 11112;
-		}else if(errorCode == 1) {
+			errorcode = 11112;
+		}else if(errorcode == 200) {
 			customerService.addCus(customer);
 		}
 //        int errorCode = customerService.addCus(customer);
         System.out.println(customer.toString());
         ResultModel resultModel = new ResultModel();
-        resultModel.setCode(errorCode);
+        resultModel.setCode(errorcode);
         resultModel.setData(customer);
         return ResultModelTool.handleResultModel(resultModel);
     }
@@ -66,16 +67,16 @@ public class CustomerController {
 	@RequestMapping(value = "/logincus", method = RequestMethod.POST)
     public ResultModel login(@RequestBody Customer customer){
 		
-		int code = 1;
+		int code = 200;
 //        int code = customerService.findCus(customer.getUsername(), customer.getPassword());
-        Customer cus = customerService.findCus2(customer.getUsername(), customer.getPassword());
+        Customer cus = customerService.findCus(customer.getUsername(), customer.getPassword());
         
         if(customer.getUsername()=="" || customer.getPassword()=="") {
 			code = 12221;
 	    }else if(cus == null){
-	    	code = 12222;
+	    	code = 10001;
 	    }else if(customer.getUsername().equals(cus.getUsername()) && cus.getPassword().equals(cus.getPassword())) {
-	    	code = 1;
+	    	code = 200;
 	    }
 //		if(customer.getUsername()=="" || customer.getPassword()=="") {
 //        	code = 12221;

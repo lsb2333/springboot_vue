@@ -1,8 +1,6 @@
 package sb.java.spring.controller;
 
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -26,13 +24,13 @@ public class DiseasecounselingController {
 	@RequestMapping(value = "/dislist", method = RequestMethod.GET)
 	public ResultModel listDis() {
 		List<Diseasecounseling> disList = diseasecounselingServicel.findAlldis();
-        Map<String,List<Diseasecounseling>> DisMap = new HashMap<>();
-        if (disList!=null){
-        	DisMap.put("DIS",disList);
-        }
+//        Map<String,List<Diseasecounseling>> DisMap = new HashMap<>();
+//        if (disList!=null){
+//        	DisMap.put("DIS",disList);
+//        }
         ResultModel resultModel = new ResultModel();
-        resultModel.setCode(1);
-        resultModel.setData(DisMap);
+        resultModel.setCode(200);
+        resultModel.setData(disList);
         return ResultModelTool.handleResultModel(resultModel);
 		
 	}

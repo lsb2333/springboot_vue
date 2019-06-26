@@ -16,15 +16,15 @@ public interface CustomerDao {
 
 	//通过用户名查询数据库中已经存在的用户名密码
 	@Select("select username,password from customer where username = #{username} and password = #{password}")
-	public Customer findCus2(@Param("username") String username,@Param("password") String password);
+	public Customer findCus(@Param("username") String username,@Param("password") String password);
 	
     //注册
 	@Insert("insert into customer(username,password) values (#{username},#{password})")
 	int  addCus(Customer customer);
-    //删
-    int  deleteUser(Integer id);
+	
     //改
     int updateUser(Customer customer);
+    
     //查
     Customer queryUser(Integer id);
 

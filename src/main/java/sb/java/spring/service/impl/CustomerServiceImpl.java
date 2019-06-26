@@ -43,7 +43,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 	
 	@Override
-	public Customer findCus2(String username, String password) {
-		return customerDao.findCus2(username, password);
+	public Customer findCus(String username, String password) {
+		return customerDao.findCus(username, password);
 	}	
 }
