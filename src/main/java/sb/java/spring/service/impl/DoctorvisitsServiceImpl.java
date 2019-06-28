@@ -1,5 +1,7 @@
 package sb.java.spring.service.impl;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -16,6 +18,11 @@ public class DoctorvisitsServiceImpl implements DoctorvisitsService {
 	@Override
 	public int addDov(Doctorvisits doctorvisits) {
 		return doctorvisitsDao.addDov(doctorvisits);
+	}
+
+	@Override
+	public List<Doctorvisits> findAllDoc() {
+		return doctorvisitsDao.findAllDoc();
 	}
 
 }

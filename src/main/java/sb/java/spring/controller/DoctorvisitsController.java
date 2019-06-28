@@ -1,5 +1,7 @@
 package sb.java.spring.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -31,8 +33,18 @@ public class DoctorvisitsController {
 		resultModel.setData(doctorvisits);
 		
 		return ResultModelTool.handleResultModel(resultModel);
+	}
+	
+	@RequestMapping(value="listdoc", method=RequestMethod.GET)
+	public ResultModel listdoc() {
 		
+		List<Doctorvisits> listdoc = doctorvisitsService.findAllDoc();
 		
+		ResultModel resultModel = new ResultModel();
+		resultModel.setCode(200);
+		resultModel.setData(listdoc);
+		
+		return ResultModelTool.handleResultModel(resultModel);
 		
 	}
 }

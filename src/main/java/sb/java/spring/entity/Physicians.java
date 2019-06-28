@@ -28,6 +28,11 @@ public class Physicians {
      * 医师医院
      */
     private String hospital;
+    
+    /**
+     * 标题
+     */
+    private String title;
 
     /**
      * 获取编号
@@ -123,5 +128,13 @@ public class Physicians {
 	public String toString() {
 		return "Physicians [id=" + id + ", content=" + content + ", image=" + image + ", username=" + username
 				+ ", hospital=" + hospital + "]";
+	}
+
+	public String getTitle() {
+		return title;
+	}
+
+	public void setTitle(String title) {
+		this.title = title;
 	}
 }
