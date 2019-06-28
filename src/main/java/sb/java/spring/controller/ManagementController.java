@@ -8,29 +8,28 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import sb.java.spring.entity.Physicians;
+import sb.java.spring.entity.Management;
 import sb.java.spring.result.ResultModel;
 import sb.java.spring.result.ResultModelTool;
-import sb.java.spring.service.PhysiciansService;
+import sb.java.spring.service.ManagementService;
 
 @RestController
 @RequestMapping("app")
 @CrossOrigin("*")
-public class PhysiciansController {
-
-	@Autowired
-	private PhysiciansService physiciansService;
+public class ManagementController {
 	
-	@RequestMapping(value="/listphy", method=RequestMethod.GET)
-	public ResultModel listPhy() {
+	@Autowired
+	private ManagementService managementService;
+	
+	@RequestMapping(value="listmag", method=RequestMethod.GET)
+	public ResultModel findAllmag() {
 		
-		List<Physicians> listdru = physiciansService.findAllPhy();
+		List<Management> listmag = managementService.findAllmag();
 		
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);
-		resultModel.setData(listdru);
+		resultModel.setData(listmag);
 		
 		return ResultModelTool.handleResultModel(resultModel);
-		
 	}
 }

@@ -8,29 +8,27 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import sb.java.spring.entity.Physicians;
+import sb.java.spring.entity.Information;
 import sb.java.spring.result.ResultModel;
 import sb.java.spring.result.ResultModelTool;
-import sb.java.spring.service.PhysiciansService;
+import sb.java.spring.service.InformationService;
 
 @RestController
-@RequestMapping("app")
+@RequestMapping(value="app")
 @CrossOrigin("*")
-public class PhysiciansController {
+public class InformationController {
 
 	@Autowired
-	private PhysiciansService physiciansService;
+	private InformationService informationService;
 	
-	@RequestMapping(value="/listphy", method=RequestMethod.GET)
-	public ResultModel listPhy() {
+	@RequestMapping(value="listinfo", method=RequestMethod.GET)
+	public ResultModel listinfo() {
 		
-		List<Physicians> listdru = physiciansService.findAllPhy();
+		List<Information> listinfo = informationService.findAllinfo();
 		
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);
-		resultModel.setData(listdru);
-		
+		resultModel.setData(listinfo);
 		return ResultModelTool.handleResultModel(resultModel);
-		
 	}
 }

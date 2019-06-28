@@ -14,7 +14,7 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.DiseasecounselingService;
 
 @RestController
-@RequestMapping(value = "dis")
+@RequestMapping(value = "app")
 @CrossOrigin("*")
 public class DiseasecounselingController {
 	

@@ -14,7 +14,7 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.DrugsService;
 
 @RestController
-@RequestMapping("drug")
+@RequestMapping("app")
 @CrossOrigin("*")
 public class DrugsController {
 	

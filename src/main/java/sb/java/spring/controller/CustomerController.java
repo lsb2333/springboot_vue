@@ -17,14 +17,14 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.CustomerService;
 
 @RestController
-@RequestMapping(value = "customer")
+@RequestMapping(value = "app")
 @CrossOrigin("*")
 public class CustomerController {
 
 	@Autowired
 	private CustomerService customerService;
 	
-	@RequestMapping(value = "/list", method = RequestMethod.GET)
+	@RequestMapping(value = "/listcus", method = RequestMethod.GET)
 	public ResultModel listCus() {
 		List<Customer> cusList = customerService.getAllCus();
         Map<String,List<Customer>> UserMap = new HashMap<>();

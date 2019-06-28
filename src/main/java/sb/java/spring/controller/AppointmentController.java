@@ -15,7 +15,7 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.AppointmentService;
 
 @RestController
-@RequestMapping(value="apm")
+@RequestMapping(value="app")
 @CrossOrigin("*")
 public class AppointmentController {
 

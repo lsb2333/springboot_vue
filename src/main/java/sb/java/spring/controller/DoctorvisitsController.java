@@ -15,7 +15,7 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.DoctorvisitsService;
 
 @RestController
-@RequestMapping(value="dov")
+@RequestMapping(value="app")
 @CrossOrigin("*")
 public class DoctorvisitsController {
 
@@ -25,7 +25,9 @@ public class DoctorvisitsController {
 	@RequestMapping(value="adddov", method=RequestMethod.POST)
 	public ResultModel adddov(@RequestBody Doctorvisits doctorvisits) {
 		int code = 200;
-		if(code==200) {
+		if(doctorvisits.getUsername()=="") {
+			code = 10006;
+		}else if(code==200) {
 			  doctorvisitsService.addDov(doctorvisits);
 		}
 		ResultModel resultModel = new ResultModel();
