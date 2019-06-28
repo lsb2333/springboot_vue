@@ -4,6 +4,6 @@ import sb.java.spring.entity.Doctorvisits;
 
 public interface DoctorvisitsService {
 
-	public Doctorvisits addDov(Doctorvisits doctorvisits);
+	public int addDov(Doctorvisits doctorvisits);
 	
 }

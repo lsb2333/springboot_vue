@@ -8,6 +8,6 @@ public interface DoctorvisitsDao {
 
 	//添加医生问诊病历
 	@Insert("insert into doctorvisits(username,title,describes,status) values (#{username},#{title},#{describes},#{username})")
-	Doctorvisits addDov(Doctorvisits doctorvisits);
+	public int addDov(Doctorvisits doctorvisits);
 
 }

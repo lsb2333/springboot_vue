@@ -14,7 +14,7 @@ public class DoctorvisitsServiceImpl implements DoctorvisitsService {
 	private DoctorvisitsDao doctorvisitsDao;
 	
 	@Override
-	public Doctorvisits addDov(Doctorvisits doctorvisits) {
+	public int addDov(Doctorvisits doctorvisits) {
 		return doctorvisitsDao.addDov(doctorvisits);
 	}
 
