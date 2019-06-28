@@ -1,0 +1,11 @@
+package sb.java.spring.service;
+
+import java.util.List;
+
+import sb.java.spring.entity.Physicians;
+
+public interface PhysiciansService {
+	
+	//查询所有数据
+	public List<Physicians> findAllPhy();
+}

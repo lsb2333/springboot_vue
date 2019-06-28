@@ -1,6 +1,5 @@
 package sb.java.spring.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
 public class Drugs {
@@ -11,9 +10,14 @@ public class Drugs {
     private Integer id;
 
     /**
+     * 图片
+     */
+    private String image;
+
+    /**
      * 姓名
      */
-    private String name;
+    private String username;
 
     /**
      * 价格
@@ -28,12 +32,12 @@ public class Drugs {
     /**
      * 描述
      */
-    private String describe;
+    private String describes;
 
     /**
      * 有效期
      */
-    private Date term;
+    private String term;
 
     /**
      * 获取编号
@@ -54,21 +58,39 @@ public class Drugs {
     }
 
     /**
+     * 获取图片
+     *
+     * @return image - 图片
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * 设置图片
+     *
+     * @param image 图片
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+    /**
      * 获取姓名
      *
-     * @return name - 姓名
+     * @return username - 姓名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置姓名
      *
-     * @param name 姓名
+     * @param username 姓名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -110,19 +132,19 @@ public class Drugs {
     /**
      * 获取描述
      *
-     * @return describe - 描述
+     * @return describes - 描述
      */
-    public String getDescribe() {
-        return describe;
+    public String getDescribes() {
+        return describes;
     }
 
     /**
      * 设置描述
      *
-     * @param describe 描述
+     * @param describes 描述
      */
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribes(String describes) {
+        this.describes = describes;
     }
 
     /**
@@ -130,7 +152,7 @@ public class Drugs {
      *
      * @return term - 有效期
      */
-    public Date getTerm() {
+    public String getTerm() {
         return term;
     }
 
@@ -139,7 +161,13 @@ public class Drugs {
      *
      * @param term 有效期
      */
-    public void setTerm(Date term) {
+    public void setTerm(String term) {
         this.term = term;
     }
+
+	@Override
+	public String toString() {
+		return "Drugs [id=" + id + ", image=" + image + ", username=" + username + ", price=" + price + ", stock="
+				+ stock + ", describes=" + describes + ", term=" + term + "]";
+	}
 }

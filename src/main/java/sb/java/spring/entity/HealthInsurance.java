@@ -1,6 +1,5 @@
 package sb.java.spring.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
 @Table(name = "health_insurance")
@@ -20,7 +19,7 @@ public class HealthInsurance {
     /**
      * 姓名
      */
-    private String name;
+    private String username;
 
     /**
      * 系别
@@ -63,13 +62,13 @@ public class HealthInsurance {
      * 开始日期
      */
     @Column(name = "start_date")
-    private Date startDate;
+    private String startDate;
 
     /**
      * 结束日期
      */
     @Column(name = "end_date")
-    private Date endDate;
+    private String endDate;
 
     /**
      * 状态
@@ -116,19 +115,19 @@ public class HealthInsurance {
     /**
      * 获取姓名
      *
-     * @return name - 姓名
+     * @return username - 姓名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置姓名
      *
-     * @param name 姓名
+     * @param username 姓名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -262,7 +261,7 @@ public class HealthInsurance {
      *
      * @return start_date - 开始日期
      */
-    public Date getStartDate() {
+    public String getStartDate() {
         return startDate;
     }
 
@@ -271,7 +270,7 @@ public class HealthInsurance {
      *
      * @param startDate 开始日期
      */
-    public void setStartDate(Date startDate) {
+    public void setStartDate(String startDate) {
         this.startDate = startDate;
     }
 
@@ -280,7 +279,7 @@ public class HealthInsurance {
      *
      * @return end_date - 结束日期
      */
-    public Date getEndDate() {
+    public String getEndDate() {
         return endDate;
     }
 
@@ -289,7 +288,7 @@ public class HealthInsurance {
      *
      * @param endDate 结束日期
      */
-    public void setEndDate(Date endDate) {
+    public void setEndDate(String endDate) {
         this.endDate = endDate;
     }
 
@@ -310,4 +309,12 @@ public class HealthInsurance {
     public void setHiStatus(String hiStatus) {
         this.hiStatus = hiStatus;
     }
+
+	@Override
+	public String toString() {
+		return "HealthInsurance [id=" + id + ", studentNo=" + studentNo + ", username=" + username + ", dept=" + dept
+				+ ", grade=" + grade + ", major=" + major + ", glass=" + glass + ", cardNo=" + cardNo + ", idNo=" + idNo
+				+ ", mobile=" + mobile + ", startDate=" + startDate + ", endDate=" + endDate + ", hiStatus=" + hiStatus
+				+ "]";
+	}
 }

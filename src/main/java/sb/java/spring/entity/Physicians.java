@@ -22,7 +22,7 @@ public class Physicians {
     /**
      * 医师名
      */
-    private String name;
+    private String username;
 
     /**
      * 医师医院
@@ -86,19 +86,19 @@ public class Physicians {
     /**
      * 获取医师名
      *
-     * @return name - 医师名
+     * @return username - 医师名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置医师名
      *
-     * @param name 医师名
+     * @param username 医师名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -118,4 +118,10 @@ public class Physicians {
     public void setHospital(String hospital) {
         this.hospital = hospital;
     }
+
+	@Override
+	public String toString() {
+		return "Physicians [id=" + id + ", content=" + content + ", image=" + image + ", username=" + username
+				+ ", hospital=" + hospital + "]";
+	}
 }

@@ -17,7 +17,7 @@ public class Doctor {
     /**
      * 姓名
      */
-    private String name;
+    private String username;
 
     /**
      * 科类
@@ -27,7 +27,7 @@ public class Doctor {
     /**
      * 个人描述
      */
-    private String describe;
+    private String describes;
 
     /**
      * 推荐指数
@@ -37,7 +37,7 @@ public class Doctor {
     /**
      * 从医时间
      */
-    private Integer year;
+    private Integer years;
 
     /**
      * 获取编号
@@ -78,19 +78,19 @@ public class Doctor {
     /**
      * 获取姓名
      *
-     * @return name - 姓名
+     * @return username - 姓名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置姓名
      *
-     * @param name 姓名
+     * @param username 姓名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -114,19 +114,19 @@ public class Doctor {
     /**
      * 获取个人描述
      *
-     * @return describe - 个人描述
+     * @return describes - 个人描述
      */
-    public String getDescribe() {
-        return describe;
+    public String getDescribes() {
+        return describes;
     }
 
     /**
      * 设置个人描述
      *
-     * @param describe 个人描述
+     * @param describes 个人描述
      */
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribes(String describes) {
+        this.describes = describes;
     }
 
     /**
@@ -150,18 +150,24 @@ public class Doctor {
     /**
      * 获取从医时间
      *
-     * @return year - 从医时间
+     * @return years - 从医时间
      */
-    public Integer getYear() {
-        return year;
+    public Integer getYears() {
+        return years;
     }
 
     /**
      * 设置从医时间
      *
-     * @param year 从医时间
+     * @param years 从医时间
      */
-    public void setYear(Integer year) {
-        this.year = year;
+    public void setYears(Integer years) {
+        this.years = years;
     }
+
+	@Override
+	public String toString() {
+		return "Doctor [id=" + id + ", image=" + image + ", username=" + username + ", section=" + section
+				+ ", describes=" + describes + ", recommendation=" + recommendation + ", years=" + years + "]";
+	}
 }

@@ -1,55 +1,103 @@
 package sb.java.spring.entity;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 
-@Entity
-@Table(name="diseasecounseling")
 public class Diseasecounseling {
-	
-	@Id
-	private int id;
-	
-	@Column(name="title")
-	private String title;
-	
-	@Column(name="content")
-	private String content;
-	
-	@Column(name="image")
-	private String image;
+    /**
+     * 编号
+     */
+    @Id
+    private Integer id;
 
-	public int getId() {
-		return id;
-	}
+    /**
+     * 标题
+     */
+    private String title;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    /**
+     * 内容
+     */
+    private String content;
 
-	public String getTitle() {
-		return title;
-	}
+    /**
+     * 图片
+     */
+    private String image;
 
-	public void setTitle(String title) {
-		this.title = title;
-	}
+    /**
+     * 获取编号
+     *
+     * @return id - 编号
+     */
+    public Integer getId() {
+        return id;
+    }
 
-	public String getContent() {
-		return content;
-	}
+    /**
+     * 设置编号
+     *
+     * @param id 编号
+     */
+    public void setId(Integer id) {
+        this.id = id;
+    }
 
-	public void setContent(String content) {
-		this.content = content;
-	}
+    /**
+     * 获取标题
+     *
+     * @return title - 标题
+     */
+    public String getTitle() {
+        return title;
+    }
 
-	public String getImage() {
-		return image;
-	}
+    /**
+     * 设置标题
+     *
+     * @param title 标题
+     */
+    public void setTitle(String title) {
+        this.title = title;
+    }
 
-	public void setImage(String image) {
-		this.image = image;
+    /**
+     * 获取内容
+     *
+     * @return content - 内容
+     */
+    public String getContent() {
+        return content;
+    }
+
+    /**
+     * 设置内容
+     *
+     * @param content 内容
+     */
+    public void setContent(String content) {
+        this.content = content;
+    }
+
+    /**
+     * 获取图片
+     *
+     * @return image - 图片
+     */
+    public String getImage() {
+        return image;
+    }
+
+    /**
+     * 设置图片
+     *
+     * @param image 图片
+     */
+    public void setImage(String image) {
+        this.image = image;
+    }
+
+	@Override
+	public String toString() {
+		return "Diseasecounseling [id=" + id + ", title=" + title + ", content=" + content + ", image=" + image + "]";
 	}
 }

@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -36,17 +35,17 @@ public class DrugsController {
 	}
 	
 	
-	@RequestMapping(value="/findName", method=RequestMethod.POST)
-	public ResultModel findName(@RequestBody String name) {
-		
-		System.out.println(name);
-		List<Drugs> findname = drugsService.findNameDru("%仁%");
-		
-		ResultModel resultModel = new ResultModel();
-		resultModel.setCode(200);
-		resultModel.setData(findname);
-		
-		return ResultModelTool.handleResultModel(resultModel);
-		
-	}
+//	@RequestMapping(value="/findName", method=RequestMethod.POST)
+//	public ResultModel findName(@RequestBody String name) {
+//		
+//		System.out.println(name);
+//		List<Drugs> findname = drugsService.findNameDru("name");
+//		
+//		ResultModel resultModel = new ResultModel();
+//		resultModel.setCode(200);
+//		resultModel.setData(findname);
+//		
+//		return ResultModelTool.handleResultModel(resultModel);
+//		
+//	}
 }

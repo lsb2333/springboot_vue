@@ -32,8 +32,7 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Override
 	public int updateUser(Customer customer) {
-		// TODO Auto-generated method stub
-		return 0;
+		return customerDao.updateUser(customer);
 	}
 
 	@Override

@@ -96,4 +96,9 @@ public class Information {
     public void setInfotime(Date infotime) {
         this.infotime = infotime;
     }
+
+	@Override
+	public String toString() {
+		return "Information [id=" + id + ", namespace=" + namespace + ", info=" + info + ", infotime=" + infotime + "]";
+	}
 }

@@ -1,6 +1,5 @@
 package sb.java.spring.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
 public class Emr {
@@ -23,17 +22,17 @@ public class Emr {
     /**
      * 姓名
      */
-    private String name;
+    private String username;
 
     /**
      * 就诊日期
      */
-    private Date treatmenttime;
+    private String treatmenttime;
 
     /**
      * 发病时间
      */
-    private Date diseasetime;
+    private String diseasetime;
 
     /**
      * 症状
@@ -102,19 +101,19 @@ public class Emr {
     /**
      * 获取姓名
      *
-     * @return name - 姓名
+     * @return username - 姓名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置姓名
      *
-     * @param name 姓名
+     * @param username 姓名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -122,7 +121,7 @@ public class Emr {
      *
      * @return treatmenttime - 就诊日期
      */
-    public Date getTreatmenttime() {
+    public String getTreatmenttime() {
         return treatmenttime;
     }
 
@@ -131,7 +130,7 @@ public class Emr {
      *
      * @param treatmenttime 就诊日期
      */
-    public void setTreatmenttime(Date treatmenttime) {
+    public void setTreatmenttime(String treatmenttime) {
         this.treatmenttime = treatmenttime;
     }
 
@@ -140,7 +139,7 @@ public class Emr {
      *
      * @return diseasetime - 发病时间
      */
-    public Date getDiseasetime() {
+    public String getDiseasetime() {
         return diseasetime;
     }
 
@@ -149,7 +148,7 @@ public class Emr {
      *
      * @param diseasetime 发病时间
      */
-    public void setDiseasetime(Date diseasetime) {
+    public void setDiseasetime(String diseasetime) {
         this.diseasetime = diseasetime;
     }
 
@@ -188,4 +187,11 @@ public class Emr {
     public void setStatus(String status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Emr [id=" + id + ", recordname=" + recordname + ", recordtime=" + recordtime + ", username=" + username
+				+ ", treatmenttime=" + treatmenttime + ", diseasetime=" + diseasetime + ", symptom=" + symptom
+				+ ", status=" + status + "]";
+	}
 }

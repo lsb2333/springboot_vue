@@ -10,9 +10,9 @@ public class Management {
     private Integer id;
 
     /**
-     * 体重
+     * 性别
      */
-    private String weight;
+    private String sex;
 
     /**
      * 身高
@@ -20,9 +20,19 @@ public class Management {
     private String height;
 
     /**
-     * 血压
+     * 正常体重
+     */
+    private String weight;
+
+    /**
+     * 正常血压
      */
     private String pressure;
+
+    /**
+     * 正常视力
+     */
+    private String sight;
 
     /**
      * 获取编号
@@ -43,21 +53,21 @@ public class Management {
     }
 
     /**
-     * 获取体重
+     * 获取性别
      *
-     * @return weight - 体重
+     * @return sex - 性别
      */
-    public String getWeight() {
-        return weight;
+    public String getSex() {
+        return sex;
     }
 
     /**
-     * 设置体重
+     * 设置性别
      *
-     * @param weight 体重
+     * @param sex 性别
      */
-    public void setWeight(String weight) {
-        this.weight = weight;
+    public void setSex(String sex) {
+        this.sex = sex;
     }
 
     /**
@@ -79,20 +89,62 @@ public class Management {
     }
 
     /**
-     * 获取血压
+     * 获取正常体重
      *
-     * @return pressure - 血压
+     * @return weight - 正常体重
+     */
+    public String getWeight() {
+        return weight;
+    }
+
+    /**
+     * 设置正常体重
+     *
+     * @param weight 正常体重
+     */
+    public void setWeight(String weight) {
+        this.weight = weight;
+    }
+
+    /**
+     * 获取正常血压
+     *
+     * @return pressure - 正常血压
      */
     public String getPressure() {
         return pressure;
     }
 
     /**
-     * 设置血压
+     * 设置正常血压
      *
-     * @param pressure 血压
+     * @param pressure 正常血压
      */
     public void setPressure(String pressure) {
         this.pressure = pressure;
     }
+
+    /**
+     * 获取正常视力
+     *
+     * @return sight - 正常视力
+     */
+    public String getSight() {
+        return sight;
+    }
+
+    /**
+     * 设置正常视力
+     *
+     * @param sight 正常视力
+     */
+    public void setSight(String sight) {
+        this.sight = sight;
+    }
+
+	@Override
+	public String toString() {
+		return "Management [id=" + id + ", sex=" + sex + ", height=" + height + ", weight=" + weight + ", pressure="
+				+ pressure + ", sight=" + sight + "]";
+	}
 }

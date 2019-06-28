@@ -1,10 +1,7 @@
 package sb.java.spring.entity;
 
-import java.util.Date;
 import javax.persistence.*;
 
-@Entity
-@Table(name="appointment")
 public class Appointment {
     /**
      * 编号
@@ -15,17 +12,17 @@ public class Appointment {
     /**
      * 姓名
      */
-    private String name;
+    private String username;
 
     /**
      * 就诊日期
      */
-    private Date treatmenttime;
+    private String treatmenttime;
 
     /**
      * 发病时间
      */
-    private Date diseasetime;
+    private String diseasetime;
 
     /**
      * 症状
@@ -58,19 +55,19 @@ public class Appointment {
     /**
      * 获取姓名
      *
-     * @return name - 姓名
+     * @return username - 姓名
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置姓名
      *
-     * @param name 姓名
+     * @param username 姓名
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
@@ -78,7 +75,7 @@ public class Appointment {
      *
      * @return treatmenttime - 就诊日期
      */
-    public Date getTreatmenttime() {
+    public String getTreatmenttime() {
         return treatmenttime;
     }
 
@@ -87,7 +84,7 @@ public class Appointment {
      *
      * @param treatmenttime 就诊日期
      */
-    public void setTreatmenttime(Date treatmenttime) {
+    public void setTreatmenttime(String treatmenttime) {
         this.treatmenttime = treatmenttime;
     }
 
@@ -96,7 +93,7 @@ public class Appointment {
      *
      * @return diseasetime - 发病时间
      */
-    public Date getDiseasetime() {
+    public String getDiseasetime() {
         return diseasetime;
     }
 
@@ -105,7 +102,7 @@ public class Appointment {
      *
      * @param diseasetime 发病时间
      */
-    public void setDiseasetime(Date diseasetime) {
+    public void setDiseasetime(String diseasetime) {
         this.diseasetime = diseasetime;
     }
 
@@ -144,4 +141,10 @@ public class Appointment {
     public void setStatus(String status) {
         this.status = status;
     }
+
+	@Override
+	public String toString() {
+		return "Appointment [id=" + id + ", username=" + username + ", treatmenttime=" + treatmenttime
+				+ ", diseasetime=" + diseasetime + ", symptom=" + symptom + ", status=" + status + "]";
+	}
 }

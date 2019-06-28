@@ -17,12 +17,12 @@ public class Disease {
     /**
      * 名称
      */
-    private String name;
+    private String username;
 
     /**
      * 描述
      */
-    private String describe;
+    private String describes;
 
     /**
      * 获取编号
@@ -63,36 +63,41 @@ public class Disease {
     /**
      * 获取名称
      *
-     * @return name - 名称
+     * @return username - 名称
      */
-    public String getName() {
-        return name;
+    public String getUsername() {
+        return username;
     }
 
     /**
      * 设置名称
      *
-     * @param name 名称
+     * @param username 名称
      */
-    public void setName(String name) {
-        this.name = name;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
     /**
      * 获取描述
      *
-     * @return describe - 描述
+     * @return describes - 描述
      */
-    public String getDescribe() {
-        return describe;
+    public String getDescribes() {
+        return describes;
     }
 
     /**
      * 设置描述
      *
-     * @param describe 描述
+     * @param describes 描述
      */
-    public void setDescribe(String describe) {
-        this.describe = describe;
+    public void setDescribes(String describes) {
+        this.describes = describes;
     }
+
+	@Override
+	public String toString() {
+		return "Disease [id=" + id + ", image=" + image + ", username=" + username + ", describes=" + describes + "]";
+	}
 }
