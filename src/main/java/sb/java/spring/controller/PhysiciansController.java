@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -29,6 +30,21 @@ public class PhysiciansController {
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);
 		resultModel.setData(listdru);
+		
+		return ResultModelTool.handleResultModel(resultModel);
+		
+	}
+
+	
+	
+	@RequestMapping(value="/selectphy/id={id}", method=RequestMethod.GET)
+	public ResultModel selectphy(@PathVariable("id") String id) {
+		
+		Physicians onedru = physiciansService.findPhyid(id);
+		
+		ResultModel resultModel = new ResultModel();
+		resultModel.setCode(200);
+		resultModel.setData(onedru);
 		
 		return ResultModelTool.handleResultModel(resultModel);
 		

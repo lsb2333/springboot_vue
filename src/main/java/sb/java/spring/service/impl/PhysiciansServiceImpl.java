@@ -21,4 +21,9 @@ public class PhysiciansServiceImpl implements PhysiciansService {
 		return physiciansDao.findAllPhy();
 	}
 
+	@Override
+	public Physicians findPhyid(String id) {
+		return physiciansDao.findPhyid(id);
+	}
+
 }

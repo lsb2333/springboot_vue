@@ -16,7 +16,7 @@ public interface CustomerDao {
     List<Customer> getAllcus();
 
 	//通过用户名查询数据库中已经存在的用户名密码
-	@Select("select username,password from customer where username = #{username} and password = #{password}")
+	@Select("select * from customer where username = #{username} and password = #{password}")
 	public Customer findCus(@Param("username") String username,@Param("password") String password);
 	
     //注册

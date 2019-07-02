@@ -37,7 +37,7 @@ public class DoctorvisitsController {
 		return ResultModelTool.handleResultModel(resultModel);
 	}
 	
-	@RequestMapping(value="listdoc", method=RequestMethod.GET)
+	@RequestMapping(value="listdov", method=RequestMethod.GET)
 	public ResultModel listdoc() {
 		
 		List<Doctorvisits> listdoc = doctorvisitsService.findAllDoc();

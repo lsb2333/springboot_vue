@@ -8,4 +8,7 @@ public interface PhysiciansService {
 	
 	//查询所有数据
 	public List<Physicians> findAllPhy();
+
+	public Physicians findPhyid(String id);
+	
 }

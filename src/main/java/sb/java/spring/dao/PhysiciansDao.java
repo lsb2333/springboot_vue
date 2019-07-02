@@ -11,5 +11,8 @@ public interface PhysiciansDao {
 	//查询所有数据
 	@Select("select * from physicians")
 	public List<Physicians> findAllPhy();
+
+	@Select ("select * from physicians where id = #{id}")
+	public Physicians findPhyid(String id);
 	
 }

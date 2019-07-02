@@ -84,7 +84,7 @@ public class CustomerController {
         System.out.println(customer);
         ResultModel resultModel = new ResultModel();
         resultModel.setCode(code);
-        resultModel.setData(customer);
+        resultModel.setData(cus);
         return ResultModelTool.handleResultModel(resultModel);
     }
 }
