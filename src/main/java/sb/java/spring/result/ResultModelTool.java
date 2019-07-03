@@ -81,6 +81,10 @@ public class ResultModelTool {
                     handledModel.setMsg("success");
                     handledModel.setData(resultModel.getData());
                     break;
+                case 11119:
+                    handledModel.setMsg("error");
+                    handledModel.setData(map);
+                    break;
                 default:
                 	handledModel.setMsg("error");
                     handledModel.setData(resultModel.getData());

@@ -18,4 +18,8 @@ public interface CustomerService {
     int updateUser(Customer customer);
     //查
     Customer queryUser(Integer id);
+    
+    public Customer findemailCus(String username, String email);
+
+	
 }

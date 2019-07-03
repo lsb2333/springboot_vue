@@ -24,11 +24,6 @@ public class CustomerServiceImpl implements CustomerService {
 		return customerDao.getAllcus();
 	}
 
-	@Override
-	public int deleteUser(Integer id) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
 	@Override
 	public int updateUser(Customer customer) {
@@ -44,5 +39,17 @@ public class CustomerServiceImpl implements CustomerService {
 	@Override
 	public Customer findCus(String username, String password) {
 		return customerDao.findCus(username, password);
+	}
+
+
+	@Override
+	public Customer findemailCus(String username, String email) {
+		return customerDao.findemailCus(username, email);
+	}
+
+	@Override
+	public int deleteUser(Integer id) {
+		// TODO Auto-generated method stub
+		return 0;
 	}	
 }
