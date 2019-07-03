@@ -30,10 +30,6 @@ public class ResultModelTool {
                     handledModel.setMsg("删除成功");
                     handledModel.setData(resultModel.getData());
                     break;
-                case 10004:
-                    handledModel.setMsg("更新成功");
-                    handledModel.setData(resultModel.getData());
-                    break;
                 case -1:
                     handledModel.setMsg("请求失败");
                     handledModel.setData(map);
@@ -51,6 +47,10 @@ public class ResultModelTool {
                     handledModel.setData(map);
                     break;
                 case 10008:
+                    handledModel.setMsg("更新失败");
+                    handledModel.setData(map);
+                    break;
+                case 10088:
                     handledModel.setMsg("更新失败");
                     handledModel.setData(map);
                     break;

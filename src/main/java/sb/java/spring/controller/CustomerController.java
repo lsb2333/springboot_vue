@@ -71,7 +71,7 @@ public class CustomerController {
         if(customer.getUsername()=="" || customer.getPassword()=="") {
 			code = 12221;
 	    }else if(cus == null){
-	    	code = 10001;
+	    	code = 10008;
 	    }else if(customer.getUsername().equals(cus.getUsername()) && cus.getPassword().equals(cus.getPassword())) {
 	    	code = 200;
 	    }
@@ -92,8 +92,8 @@ public class CustomerController {
         Customer cus = customerService.findemailCus(customer.getUsername(), customer.getEmail());
         System.out.println(cus);
         
-        if(customer.getUsername()=="" || customer.getPassword()=="") {
-			code = 12221;
+        if(customer.getUsername()=="" || customer.getEmail()=="" || customer.getPassword()=="") {
+			code = 10088;
 	    }else if(cus == null){
 	    	code = 10001;
 	    }else if(customer.getUsername().equals(cus.getUsername()) && customer.getEmail().equals(cus.getEmail())) {
