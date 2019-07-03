@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import sb.java.spring.dao.PhysiciansDao;
+import sb.java.spring.entity.Drugs;
 import sb.java.spring.entity.Physicians;
 import sb.java.spring.service.PhysiciansService;
 
@@ -24,6 +25,11 @@ public class PhysiciansServiceImpl implements PhysiciansService {
 	@Override
 	public Physicians findPhyid(String id) {
 		return physiciansDao.findPhyid(id);
+	}
+
+	@Override
+	public List<Drugs> findNamephy(String username) {
+		return physiciansDao.findNamephy(username);
 	}
 
 }

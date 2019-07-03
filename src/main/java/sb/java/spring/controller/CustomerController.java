@@ -95,7 +95,7 @@ public class CustomerController {
         if(customer.getUsername()=="" || customer.getEmail()=="" || customer.getPassword()=="") {
 			code = 10088;
 	    }else if(cus == null){
-	    	code = 10001;
+	    	code = 10008;
 	    }else if(customer.getUsername().equals(cus.getUsername()) && customer.getEmail().equals(cus.getEmail())) {
 	    	customerService.updateUser(customer);
 	    	code = 200;
