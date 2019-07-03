@@ -10,6 +10,6 @@ public interface DrugsService {
 	public List<Drugs> findAllDru();
 	
 	//根据name模糊查询数据
-	List<Drugs> findNameDru(String name);
+	List<Drugs> findNameDru(String username);
 	
 }

@@ -21,8 +21,8 @@ public class DrugsServiceImpl implements DrugsService {
 	}
 
 	@Override
-	public List<Drugs> findNameDru(String name) {
-		return drugsDao.findNameDru(name);
+	public List<Drugs> findNameDru(String username) {
+		return drugsDao.findNameDru(username);
 	}
 
 }
