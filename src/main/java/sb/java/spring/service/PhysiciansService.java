@@ -2,7 +2,6 @@ package sb.java.spring.service;
 
 import java.util.List;
 
-import sb.java.spring.entity.Drugs;
 import sb.java.spring.entity.Physicians;
 
 public interface PhysiciansService {
@@ -12,6 +11,6 @@ public interface PhysiciansService {
 
 	public Physicians findPhyid(String id);
 
-	public List<Drugs> findNamephy(String string);
+	public List<Physicians> findNamephy(String username);
 
 }

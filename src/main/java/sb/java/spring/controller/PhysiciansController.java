@@ -3,22 +3,19 @@ package sb.java.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-import sb.java.spring.entity.Drugs;
 import sb.java.spring.entity.Physicians;
 import sb.java.spring.result.ResultModel;
 import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.PhysiciansService;
 
 @RestController
-@RequestMapping("app")
-@CrossOrigin("*")
+@RequestMapping
 public class PhysiciansController {
 
 	@Autowired
@@ -53,10 +50,10 @@ public class PhysiciansController {
 	}
 	
 	@RequestMapping(value="/findNamephy", method=RequestMethod.POST)
-	public ResultModel findName(@RequestBody String username) {
+	public ResultModel findName(@RequestBody Physicians physicians) {
 		
-		System.out.println(username);
-		List<Drugs> findnamephy = physiciansService.findNamephy("username");
+		System.out.println(physicians);
+		List<Physicians> findnamephy = physiciansService.findNamephy(physicians.getUsername());
 		System.out.println(findnamephy);
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);

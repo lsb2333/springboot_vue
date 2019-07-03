@@ -3,7 +3,6 @@ package sb.java.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -15,8 +14,7 @@ import sb.java.spring.result.ResultModelTool;
 import sb.java.spring.service.DrugsService;
 
 @RestController
-@RequestMapping("app")
-@CrossOrigin("*")
+@RequestMapping//你这个接口有问题
 public class DrugsController {
 	
 	@Autowired
@@ -37,10 +35,10 @@ public class DrugsController {
 	
 	
 	@RequestMapping(value="/findName", method=RequestMethod.POST)
-	public ResultModel findName(@RequestBody String username) {
+	public ResultModel findName(@RequestBody Drugs drugs) {
 		
-		System.out.println(username);
-		List<Drugs> findname = drugsService.findNameDru("username");
+		System.out.println("username="+drugs);
+		List<Drugs> findname = drugsService.findNameDru(drugs.getUsername());
 		System.out.println(findname);
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);

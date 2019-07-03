@@ -5,7 +5,6 @@ import java.util.List;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 
-import sb.java.spring.entity.Drugs;
 import sb.java.spring.entity.Physicians;
 
 public interface PhysiciansDao {
@@ -17,7 +16,7 @@ public interface PhysiciansDao {
 	@Select ("select * from physicians where id = #{id}")
 	public Physicians findPhyid(String id);
 
-	@Select("select * from physicians where username like  CONCAT('%',username,'%') ")
-	public List<Drugs> findNamephy(@Param("username") String username);
+	@Select("select * from physicians where username like #{username}")
+	public List<Physicians> findNamephy(@Param("username") String username);
 	
 }

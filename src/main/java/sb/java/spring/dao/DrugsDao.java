@@ -22,7 +22,7 @@ public interface DrugsDao {
 	 * select username  as title, ... from 表2 where ....)
 	 */
 	//根据name模糊查询数据
-	@Select("select * from drugs where username like  CONCAT('%',username,'%') ")
+	@Select("select * from drugs where username like #{username}")
 	public List<Drugs> findNameDru(@Param("username") String username);
 	
 	

@@ -4,12 +4,14 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import sb.java.spring.dao.AppointmentDao;
 import sb.java.spring.entity.Appointment;
 import sb.java.spring.service.AppointmentService;
 
 @Service
+@Transactional
 public class AppointmentServiceImpl implements AppointmentService {
 
 	@Autowired
