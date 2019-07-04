@@ -38,13 +38,24 @@ public class Emr {
      * 症状
      */
     private String symptom;
+    
+    private String phone;
 
     /**
      * 状态
      */
     private String status;
+    
 
-    /**
+    public String getPhone() {
+		return phone;
+	}
+
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+	/**
      * 获取编号
      *
      * @return id - 编号
@@ -192,6 +203,6 @@ public class Emr {
 	public String toString() {
 		return "Emr [id=" + id + ", recordname=" + recordname + ", recordtime=" + recordtime + ", username=" + username
 				+ ", treatmenttime=" + treatmenttime + ", diseasetime=" + diseasetime + ", symptom=" + symptom
-				+ ", status=" + status + "]";
+				+ ", phone=" + phone + ", status=" + status + "]";
 	}
 }

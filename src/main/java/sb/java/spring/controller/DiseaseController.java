@@ -3,6 +3,7 @@ package sb.java.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
@@ -27,6 +28,19 @@ public class DiseaseController {
 		ResultModel resultModel = new ResultModel();
 		resultModel.setCode(200);
 		resultModel.setData(listdes);
+		
+		return ResultModelTool.handleResultModel(resultModel);
+		
+	}
+	
+	@RequestMapping(value="/selectdse/id={id}", method=RequestMethod.GET)
+	public ResultModel selectdse(@PathVariable("id") String id) {
+		
+		Disease onedse = diseaseService.selectdse(id);
+		
+		ResultModel resultModel = new ResultModel();
+		resultModel.setCode(200);
+		resultModel.setData(onedse);
 		
 		return ResultModelTool.handleResultModel(resultModel);
 		

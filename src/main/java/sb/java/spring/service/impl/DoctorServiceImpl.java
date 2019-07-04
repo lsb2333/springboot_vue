@@ -8,6 +8,7 @@ import org.springframework.transaction.annotation.Transactional;
 
 import sb.java.spring.dao.DoctorDao;
 import sb.java.spring.entity.Doctor;
+import sb.java.spring.entity.Physicians;
 import sb.java.spring.service.DoctorService;
 
 @Service
@@ -20,6 +21,11 @@ public class DoctorServiceImpl implements DoctorService {
 	@Override
 	public List<Doctor> findAlldoc() {
 		return doctorDao.findAlldoc();
+	}
+
+	@Override
+	public Physicians findocid(String id) {
+		return doctorDao.findocid(id);
 	}
 
 }

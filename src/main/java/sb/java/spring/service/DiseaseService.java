@@ -8,5 +8,7 @@ public interface DiseaseService {
 
 	public List<Disease> findAlldes();
 
+	public Disease selectdse(String id);
+
 	 
 }

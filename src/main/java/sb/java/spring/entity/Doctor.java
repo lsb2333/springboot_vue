@@ -38,8 +38,27 @@ public class Doctor {
      * 从医时间
      */
     private Integer years;
+    
+    private String position;
+    
+    private String workhospital;
+    public String getPosition() {
+		return position;
+	}
 
-    /**
+	public void setPosition(String position) {
+		this.position = position;
+	}
+
+	public String getWorkhospital() {
+		return workhospital;
+	}
+
+	public void setWorkhospital(String workhospital) {
+		this.workhospital = workhospital;
+	}
+
+	/**
      * 获取编号
      *
      * @return id - 编号

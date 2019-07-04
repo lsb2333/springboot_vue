@@ -11,5 +11,7 @@ public interface DrugsService {
 	
 	//根据name模糊查询数据
 	List<Drugs> findNameDru(String username);
+
+	public Drugs findrcid(String id);
 	
 }

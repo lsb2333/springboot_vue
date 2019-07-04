@@ -27,4 +27,9 @@ public class DrugsServiceImpl implements DrugsService {
 		return drugsDao.findNameDru("%" + username + "%");
 	}
 
+	@Override
+	public Drugs findrcid(String id) {
+		return drugsDao.findrcid(id);
+	}
+
 }

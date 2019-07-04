@@ -3,6 +3,7 @@ package sb.java.spring.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -33,15 +34,37 @@ public class DrugsController {
 		
 	}
 	
+	@RequestMapping(value="/selectdru/id={id}", method=RequestMethod.GET)
+	public ResultModel selectdru(@PathVariable("id") String id) {
+		
+		Drugs onedru = drugsService.findrcid(id);
+		
+		ResultModel resultModel = new ResultModel();
+		resultModel.setCode(200);
+		resultModel.setData(onedru);
+		
+		return ResultModelTool.handleResultModel(resultModel);
+		
+	}
 	
 	@RequestMapping(value="/findName", method=RequestMethod.POST)
 	public ResultModel findName(@RequestBody Drugs drugs) {
 		
+		int code = 200;
 		System.out.println("username="+drugs);
+		
 		List<Drugs> findname = drugsService.findNameDru(drugs.getUsername());
+
+		for(int i=0;i<findname.size();i++) {
+			if(findname.get(i).getUsername()=="") {
+				code = 11119;
+			}
+		}
+		
+		
 		System.out.println(findname);
 		ResultModel resultModel = new ResultModel();
-		resultModel.setCode(200);
+		resultModel.setCode(code);
 		resultModel.setData(findname);
 		
 		return ResultModelTool.handleResultModel(resultModel);

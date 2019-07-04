@@ -25,5 +25,8 @@ public interface DrugsDao {
 	@Select("select * from drugs where username like #{username}")
 	public List<Drugs> findNameDru(@Param("username") String username);
 	
+	@Select("select * from drugs where id = #{id}")
+	public Drugs findrcid(String id);
+	
 	
 }

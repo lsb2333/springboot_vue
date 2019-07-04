@@ -11,4 +11,8 @@ public interface DiseaseDao {
 	@Select("select * from disease")
 	public List<Disease> findAlldes();
 
+	@Select("select * from disease where id = #{id}")
+	public Disease selectdse(String id);
+
+
 }

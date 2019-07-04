@@ -22,4 +22,9 @@ public class DiseaseServiceImpl implements DiseaseService {
 		return diseaseDao.findAlldes();
 	}
 
+	@Override
+	public Disease selectdse(String id) {
+		return diseaseDao.selectdse(id);
+	}
+
 }
